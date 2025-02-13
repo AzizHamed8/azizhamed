@@ -1,1 +1,3 @@
 "Ligne initiale du fichier" 
+"Modification depuis feature-branch" 
+"Modification depuis main" 
