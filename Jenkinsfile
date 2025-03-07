@@ -22,17 +22,7 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-        stage('Building image') {
-            steps {
-                sh 'docker build -t azizhamed/timesheet-devops:1.0.0 .'
-            }
-        }
-        stage('Deploy Image') {
-                    steps {
-                        sh 'docker build -t azizhamed/timesheet-devops:1.0.0 .'
-                    }
-                }
-
+   
 
 
         stage('MVN Sonarqube') {
@@ -46,5 +36,16 @@ pipeline {
                 sh 'mvn deploy -Dmaven.test.skip=true'
             }
         }
+             stage('Building image') {
+            steps {
+                sh 'docker build -t azizhamed/timesheet-devops:1.0.0 .'
+            }
+        }
+        stage('Deploy Image') {
+                    steps {
+                        sh 'docker build -t azizhamed/timesheet-devops:1.0.0 .'
+                    }
+                }
+
     }
 }
