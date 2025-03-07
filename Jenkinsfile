@@ -28,5 +28,10 @@ pipeline {
 
             }
         }
+         stage('MVN Nexus') {
+            steps {
+                sh 'mvn deploy -Dmaven.test.skip=true'
+            }
+        }
     }
 }
