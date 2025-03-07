@@ -25,27 +25,27 @@ pipeline {
    
 
 
-        stage('MVN Sonarqube') {
-            steps {
-                sh 'mvn sonar:sonar -Dsonar.login=squ_c9263050f3e9762c15fe61f601fdc2a28ca3632a -Dmaven.test.skip=true'
+        // stage('MVN Sonarqube') {
+        //     steps {
+        //         sh 'mvn sonar:sonar -Dsonar.login=squ_c9263050f3e9762c15fe61f601fdc2a28ca3632a -Dmaven.test.skip=true'
 
-            }
-        }
+        //     }
+        // }
          stage('MVN Nexus') {
             steps {
                 sh 'mvn deploy -Dmaven.test.skip=true'
             }
         }
-             stage('Building image') {
-            steps {
-                sh 'docker build -t azizhamed/timesheet-devops:1.0.0 .'
-            }
-        }
-        stage('Deploy Image') {
-                    steps {
-                        sh 'docker build -t azizhamed/timesheet-devops:1.0.0 .'
-                    }
-                }
+        //      stage('Building image') {
+        //     steps {
+        //         sh 'docker build -t azizhamed/timesheet-devops:1.0.0 .'
+        //     }
+        // }
+        // stage('Deploy Image') {
+        //             steps {
+        //                 sh 'docker build -t azizhamed/timesheet-devops:1.0.0 .'
+        //             }
+        //         }
 
     }
 }
