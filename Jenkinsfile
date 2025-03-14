@@ -39,7 +39,7 @@ pipeline {
    stage('MVN Nexus') {
     steps {
         script {
-            sh 'mvn deploy -Dmaven.test.skip=true || exit 1'
+            sh 'mvn deploy -Dmaven.test.skip=true'
         }
     }
 }
