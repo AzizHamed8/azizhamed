@@ -17,11 +17,11 @@ pipeline {
             }
         }
 
-        stage('COMPILE') {
-            steps {
-                sh 'mvn clean compile'
-            }
-        }
+        // stage('COMPILE') {
+        //     steps {
+        //         sh 'mvn clean compile'
+        //     }
+        // }
    
 
 
