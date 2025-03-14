@@ -62,7 +62,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'sudo docker build -t ${IMAGE_NAME}:${IMAGE_VERSION} .'
+                    sh 'docker build -t ${IMAGE_NAME}:${IMAGE_VERSION} .'
                 }
             }
         }
