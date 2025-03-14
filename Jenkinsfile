@@ -35,15 +35,11 @@ pipeline {
         // }
 
 
-             stage('Compile') {
-            steps {
-                sh 'mvn clean compile'
-            }
-        }
+          
    stage('MVN Nexus') {
     steps {
         script {
-            sh 'mvn deploy -Dmaven.test.skip=true'
+            sh 'mvn deploy -Dmaven.test.skip=true || exit 1'
         }
     }
 }
