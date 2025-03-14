@@ -31,6 +31,13 @@ pipeline {
 
         //     }
         // }
+
+
+             stage('Compile') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
    stage('MVN Nexus') {
     steps {
         script {
