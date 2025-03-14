@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         SONAR_TOKEN = 'ton_token_sonarqube'  // Remplace par ton token
-         IMAGE_NAME = "azizhamed/test"
+        IMAGE_NAME = "azizhamed/test"
         IMAGE_VERSION = "1.0.1"
     }
 
